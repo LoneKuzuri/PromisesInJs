@@ -15,7 +15,7 @@
      <p id="jokeEmoji">😂</p>
      <button id="getJoke" class="getJoke">Ready to laugh.</button>
     </div>
-
+    <audio id="laugh" src="laugh.mp3" preload="auto"></audio>
 
     <script>
      const jokeElement = document.getElementById("joke");
@@ -61,6 +61,8 @@
 
                setTimeout(()=>{
                 jokeElement.textContent = `${data.setup} 🤣 ${data.punchline}`;
+                jokeElement.style.fontWeight = 'bold';
+                
                 jokeElement.classList.add("loaded");
                 jokeEmoji.style.display = "block";
               }, 500); //transistion play garna help garchha 
@@ -72,7 +74,7 @@
                 jokeElement.classList.add("loaded");
                 console.error(error);
             });
-         }, 1000);
+         }, 2000);
     });
         
     </script>

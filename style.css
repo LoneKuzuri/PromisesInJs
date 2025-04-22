@@ -33,7 +33,8 @@ body {
   
   button {
     padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
     background: #007bff;
     color: rgb(241, 226, 230);
     border-radius: 16px;
@@ -49,12 +50,12 @@ body {
 
   #joke {
     transition: all 0.3s ease;
-    font-size: 1.2rem;
+    font-size: 2.2rem;
     margin-top: 1rem;
-    color: #fdf9f9;
+    color: #63194a;
     font-weight: 500;
     line-height: 1.4;
-    opacity: 0;
+    opacity: 10;
     transform: translateY(10px);
     transition: all 0.4s ease-in-out;
   }
@@ -79,6 +80,8 @@ body {
     color: rgb(28, 4, 243);
     margin-bottom: 1rem;
     font-family: 'Comic Neue', cursive;
+    font-size: 60px;
+    font-weight: bold;
   }
 
   p{
