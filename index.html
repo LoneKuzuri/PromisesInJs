@@ -45,38 +45,30 @@
        jokeElement.classList.remove("loaded");
 
         //using promises with fetch
-        setTimeout(() => {
-            fetch("https://official-joke-api.appspot.com/random_joke")
-              .then(response =>{
-                console.log(response);
-                   if(!response.ok){
-                     throw new Error("Network error");
-                    }
-                 return response.json();
-                })
-
-            .then(data=>{
+        setTimeout(async () => {
+            try{
+                const response = await fetch("https://official-joke-api.appspot.com/random_joke")
+                const data = await response.json();
                 clearInterval(loadingInterval);
-                // fetchingMessage.classList.add("hidden");
 
-               setTimeout(()=>{
+                setTimeout(()=>{
                 jokeElement.textContent = `${data.setup} 🤣 ${data.punchline}`;
                 jokeElement.style.fontWeight = 'bold';
                 
                 jokeElement.classList.add("loaded");
                 jokeEmoji.style.display = "block";
               }, 500); //transistion play garna help garchha 
-            })
-        .catch(error =>{
+            }
+                catch(error){
             clearInterval(loadingInterval);
-                // fetchingMessage.classList.add("hidden");
                 jokeElement.textContent = "Failed to fetch joke. Try again.";
                 jokeElement.classList.add("loaded");
                 console.error(error);
-            });
+            }
          }, 2000);
-    });
-        
+     
+        });
+            
     </script>
 </body>
 </html>
