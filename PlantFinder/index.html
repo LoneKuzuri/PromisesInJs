@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plant Identifier - Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="login-wrapper">
+    <div class="login-left">
+      <h2>Plant Finder 🌿</h2>
+      <h3>Welcome Back!</h3>
+      <p>We source the healthiest and most beautiful plants to bring nature’s finest to your home.</p>
+      
+      <button class="google-btn">Login with Google</button>
+      <button class="email-btn">Login with Email Address</button>
+      
+      <img src="plant.png" alt="Plant" class="plant-img" />
+    </div>
+
+    <div class="login-right">
+      <form id="loginForm" class="login-form">
+        <h4>Please Enter Your Login Details</h4>
+        
+        <input type="email" id="username" placeholder="Enter Email Address" />
+        <input type="password" id="password" placeholder="Enter Password" />
+        
+        <div class="form-footer">
+            <a href="#">Forgot password?</a>
+        </div>
+        
+        <button type="submit">Login</button>
+        <p id="errorMsg"></p>
+        <p class="register">Don’t have an account? <a href="#">Register</a></p>
+      </form>
+    </div>
+  
+ </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

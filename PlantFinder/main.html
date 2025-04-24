@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome</title>
+  <link rel="stylesheet" href="main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="main-wrapper">
+    <aside class="sidebar">
+      <h2>Plant Finder 🌿</h2>
+      <nav>
+        <ul>
+          <li><a href="#" onclick="showSection('identify')">🌱 Identify Plant</a></li>
+          <li><a href="#" onclick="showSection('tips')">📋 Tips & Care</a></li>
+          <li><a href="#" onclick="showSection('sunlight')">☀️ Sunlight Needs</a></li>
+          <li><a href="#" onclick="showSection('water')">💧 Watering Guide</a></li>
+          <li><a href="#" onclick="logout()">🚪 Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="dashboard">
+      <section id="welcomeSection">
+        <h1>Welcome Back, Plant Lover! 🌼</h1>
+        <p>Get started by identifying a plant or exploring our care guide.</p>
+        <img src="plant.png" alt="Decorative Plant" class="welcome-plant"/>
+      </section>
+
+      <section id="identify" class="hidden">
+        <h2>🌱 Identify Your Plant</h2>
+        <input type="text" id="plantInput" placeholder="Enter plant name..." />
+        <button onclick="searchPlant()">Search</button>
+        <div id="plantResult"></div>
+      </section>
+
+      <section id="tips" class="hidden">
+        <h2>📋 Tips & Care</h2>
+        <p>Keep your plants healthy with our expert advice.</p>
+      </section>
+
+      <section id="sunlight" class="hidden">
+        <h2>☀️ Sunlight Needs</h2>
+        <p>Different plants need different amounts of sunlight. Learn more here.</p>
+      </section>
+
+      <section id="water" class="hidden">
+        <h2>💧 Watering Guide</h2>
+        <p>Over or under-watering can hurt your plant. Let’s fix that.</p>
+      </section>
+    </main>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
