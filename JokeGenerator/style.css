@@ -1,0 +1,94 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background: url(laughing.jpg) no-repeat center center/cover;
+  }
+  
+  .container {
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+    background: rgba(103, 194, 18, 0.144); /* makes text readable */
+    backdrop-filter: blur(10px);
+    animation: pulseBox 3s infinite;
+  }
+  @keyframes pulseBox {
+    0% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: #007bff;
+    color: rgb(241, 226, 230);
+    border-radius: 16px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: transform 0.3s ease, background .3s ease;
+  }
+  
+  button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+  }
+
+  #joke {
+    transition: all 0.3s ease;
+    font-size: 2.2rem;
+    margin-top: 1rem;
+    color: #63194a;
+    font-weight: 500;
+    line-height: 1.4;
+    opacity: 10;
+    transform: translateY(10px);
+    transition: all 0.4s ease-in-out;
+  }
+
+  #joke.loaded{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #jokeEmoji {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    display: none;
+    animation: bounce 1s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  h1{
+    color: rgb(28, 4, 243);
+    margin-bottom: 1rem;
+    font-family: 'Comic Neue', cursive;
+    font-size: 60px;
+    font-weight: bold;
+  }
+
+  p{
+    color: rgb(28, 4, 243);
+  }
+
+  #getJoke {
+    margin-top: 1.5rem;
+  }
+ 
