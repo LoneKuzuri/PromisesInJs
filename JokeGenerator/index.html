@@ -15,7 +15,7 @@
      <p id="jokeEmoji">😂</p>
      <button id="getJoke" class="getJoke">Ready to laugh.</button>
     </div>
-    <audio id="laugh" src="laugh.mp3" preload="auto"></audio>
+    <audio id="laugh" src="laugh.wav" preload="auto"></audio>
 
     <script>
      const jokeElement = document.getElementById("joke");
@@ -24,25 +24,19 @@
 
      jokeBtn.addEventListener('click',() => {
         let dots = 0;
-        
+        document.getElementById("laugh").pause();
         jokeEmoji.style.display = "none";
-        //previous jokes lai hide garchha
-        jokeElement.classList.remove("loaded");
-
 
         // Start with initial loading text
         jokeElement.style.opacity = "1"; // Make it visible immediately
-        jokeElement.textContent = "Fetching a joke...";
-
-
-        // Show fetching message
-        // fetchingMessage.classList.remove("hidden");  
+        jokeElement.textContent = "Fetching a joke...";  
+        jokeElement.style.fontWeight = 'bold';
    
         const loadingInterval = setInterval(() =>{
             jokeElement.textContent = "Fetching a joke" + ".".repeat(dots % 4);
             dots++;
         }, 500);
-       jokeElement.classList.remove("loaded");
+       
 
         //using promises with fetch
         setTimeout(() => {
@@ -63,15 +57,15 @@
                 jokeElement.textContent = `${data.setup} 🤣 ${data.punchline}`;
                 jokeElement.style.fontWeight = 'bold';
                 
-                jokeElement.classList.add("loaded");
                 jokeEmoji.style.display = "block";
+                document.getElementById('laugh').play();
               }, 500); //transistion play garna help garchha 
             })
         .catch(error =>{
             clearInterval(loadingInterval);
                 // fetchingMessage.classList.add("hidden");
                 jokeElement.textContent = "Failed to fetch joke. Try again.";
-                jokeElement.classList.add("loaded");
+                
                 console.error(error);
             });
          }, 2000);
